@@ -1,50 +1,193 @@
 /* ==UserStyle==
 @name           ChatGPT Dracula
 @namespace      github.com/UniverseKing654
-@version        1.0.2
+@version        1.0.3
 @description    A dark theme for ChatGPT based on the Dracula color scheme.
 @author         Universe (http://github.com/UniverseKing654)
 ==/UserStyle== */
 
 @-moz-document domain("chatgpt.com") {
-  :root {
-    color-scheme: dark;
-    --background: #282a36;
-    --background-secondary: #2b2640;
-    --background-tertiary: #151320;
-    --currentLine: #44475a;
-    --foreground: #f8f8f2;
-    --comment: #6272a4;
-    --cyan: #8be9fd;
-    --green: #50fa7b;
-    --orange: #ffb86c;
-    --pink: #ff79c6;
-    --purple: #bd93f9;
-    --red: #ff5555;
-    --yellow: #f1fa8c;
-  }
-
+  :root,
   .dark {
-    --sidebar-surface-primary: #2b2640;
-    --bg-elevated-secondary: #2b2640;
-    --main-surface-primary: #282a36;
-    --main-surface-secondary: #151320;
-    --main-surface-tertiary: #6272a4;
-    --bg-primary: #282a36;
-    --message-surface: #44475a;
+    color-scheme: dark !important;
+
+    --background: #282a36 !important;
+    --background-secondary: #2b2640 !important;
+    --background-tertiary: #151320 !important;
+    --currentLine: #44475a !important;
+    --foreground: #f8f8f2 !important;
+    --comment: #6272a4 !important;
+
+    --cyan: #8be9fd !important;
+    --green: #50fa7b !important;
+    --orange: #ffb86c !important;
+    --pink: #ff79c6 !important;
+    --purple: #bd93f9 !important;
+    --red: #ff5555 !important;
+    --yellow: #f1fa8c !important;
+
+    --bg-primary: #282a36 !important;
+    --bg-secondary: #2b2640 !important;
+    --bg-tertiary: #151320 !important;
+
+    --main-surface-primary: #282a36 !important;
+    --main-surface-secondary: #2b2640 !important;
+    --main-surface-tertiary: #44475a !important;
+
+    --sidebar-surface-primary: #2b2640 !important;
+    --sidebar-surface-secondary: #151320 !important;
+    --sidebar-surface-tertiary: #44475a !important;
+
+    --message-surface: #44475a !important;
+    --composer-surface: #2b2640 !important;
+
+    --text-primary: #f8f8f2 !important;
+    --text-secondary: #bd93f9 !important;
+    --text-tertiary: #6272a4 !important;
+
+    --border-light: #44475a !important;
+    --border-medium: #44475a !important;
   }
 
-  /* Prompt Bar */
-  .dark\:bg-\[\#303030\]:is(.dark *) {
-    background-color: #44475a;
+  html,
+  body {
+    background-color: #282a36 !important;
+    color: #f8f8f2 !important;
   }
 
-  /* Scroll Bars */
-  .overflow-auto:hover,
-  .overflow-scroll:hover,
-  .overflow-x-auto:hover,
-  .overflow-y-auto:hover {
-    scrollbar-color: var(--comment) transparent;
+  main,
+  .bg-token-main-surface-primary {
+    background-color: #282a36 !important;
+  }
+
+  .bg-token-main-surface-secondary {
+    background-color: #2b2640 !important;
+  }
+
+  .bg-token-main-surface-tertiary {
+    background-color: #44475a !important;
+  }
+
+  .bg-token-sidebar-surface-primary {
+    background-color: #2b2640 !important;
+  }
+
+  .bg-token-sidebar-surface-secondary {
+    background-color: #151320 !important;
+  }
+
+  .bg-token-sidebar-surface-tertiary {
+    background-color: #44475a !important;
+  }
+
+  .bg-token-composer-surface {
+    background-color: #2b2640 !important;
+  }
+
+  /*
+    Top banner / header area
+  */
+  header,
+  nav,
+  [role="banner"],
+  [data-testid="conversation-header"],
+  [class*="sticky"][class*="top-"],
+  [class*="absolute"][class*="top-0"],
+  [class*="fixed"][class*="top-0"] {
+    background-color: #282a36 !important;
+    color: #f8f8f2 !important;
+    border-color: #44475a !important;
+  }
+
+  /*
+    Top black strip / project header container
+  */
+  body > div,
+  #__next,
+  [class*="bg-black"],
+  [class*="bg-token-main-surface-primary"] {
+    background-color: #282a36 !important;
+  }
+
+  header *,
+  nav *,
+  [role="banner"] * {
+    color: #f8f8f2 !important;
+  }
+
+  textarea,
+  [contenteditable="true"] {
+    color: #f8f8f2 !important;
+    background-color: transparent !important;
+  }
+
+  textarea::placeholder {
+    color: #6272a4 !important;
+  }
+
+  [data-message-author-role="user"] .bg-token-message-surface {
+    background-color: #44475a !important;
+  }
+
+  /*
+    Code block container
+  */
+  .prose .contain-inline-size {
+    background-color: #151320 !important;
+    border: 1px solid #44475a !important;
+    border-radius: 0.75rem !important;
+    overflow: hidden !important;
+    box-shadow: none !important;
+  }
+
+  /*
+    Code block header
+  */
+  .prose .contain-inline-size > div:first-child {
+    background-color: #111217 !important;
+    border-bottom: 1px solid #282a36 !important;
+    border-radius: 0.75rem 0.75rem 0 0 !important;
+  }
+
+  /*
+    Code block body
+  */
+  .prose .contain-inline-size pre {
+    background-color: #151320 !important;
+    color: #f8f8f2 !important;
+    margin: 0 !important;
+    border: 0 !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+
+  .prose .contain-inline-size pre code {
+    display: block !important;
+    background-color: transparent !important;
+    color: #f8f8f2 !important;
+    border: 0 !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+
+  /*
+    Inline code only
+  */
+  .prose p code,
+  .prose li code,
+  .prose td code,
+  .prose th code {
+    background-color: #151320 !important;
+    color: #f8f8f2 !important;
+    border-radius: 0.35rem !important;
+    padding: 0.12rem 0.28rem !important;
+  }
+
+  .border-token-border-light,
+  .border-token-border-medium {
+    border-color: #44475a !important;
   }
 
   .overflow-auto,
@@ -53,38 +196,19 @@
   .overflow-x-scroll,
   .overflow-y-auto,
   .overflow-y-scroll {
-    scrollbar-color: var(--comment) transparent;
+    scrollbar-color: #6272a4 transparent !important;
   }
 
-  /* Chat Search */
-  .bg-token-main-surface-primary {
-    background-color: var(--background);
-  }
-
-  /* Variables in text */
-  .prose :where(code):not(:where([class~="not-prose"] *)) {
-    background-color: var(--background-tertiary);
-  }
-
-  .dark\:prose-invert:is(.dark *)
-    :where(pre):not(:where([class~="not-prose"] *))
-    code {
-    background-color: #0000;
-  }
-
-  /* Formulas and keywords */
   :is(.light .dark, .dark) .hljs-doctag,
   :is(.light .dark, .dark) .hljs-formula,
   :is(.light .dark, .dark) .hljs-keyword {
-    color: var(--pink);
+    color: #ff79c6 !important;
   }
 
-  /* Attributes */
   :is(.light .dark, .dark) .hljs-attr {
-    color: var(--foreground);
+    color: #f8f8f2 !important;
   }
 
-  /* Attributes, selectors, variables*/
   :is(.light .dark, .dark) .hljs-selector-attr,
   :is(.light .dark, .dark) .hljs-selector-class,
   :is(.light .dark, .dark) .hljs-selector-pseudo,
@@ -92,31 +216,48 @@
   :is(.light .dark, .dark) .hljs-type,
   :is(.light .dark, .dark) .hljs-variable,
   :is(.light .dark, .dark) .hljs-tag .hljs-name {
-    color: var(--pink);
+    color: #ff79c6 !important;
   }
 
-  /* Numbers and variables */
   :is(.light .dark, .dark) .hljs-number,
-  :is(.light .dark, .dark) .hljs-variable,
   :is(.light .dark, .dark) .hljs-literal {
-    color: var(--purple);
+    color: #bd93f9 !important;
   }
 
-  /* Built-in functions, class, titles*/
   :is(.light .dark, .dark) .hljs-built_in,
   :is(.light .dark, .dark) .hljs-class,
   :is(.light .dark, .dark) .hljs-title.function_,
   :is(.light .dark, .dark) .hljs-title {
-    color: var(--green);
+    color: #50fa7b !important;
   }
 
-  /* Class titles*/
   :is(.light .dark, .dark) .hljs-title.class_ {
-    color: var(--cyan);
+    color: #8be9fd !important;
   }
 
-  /* Strings */
   :is(.light .dark, .dark) .hljs-string {
-    color: var(--yellow);
+    color: #f1fa8c !important;
+  }
+
+  /*
+    Force the full composer/search box to match code background
+  */
+  form,
+  form > div,
+  form div[class*="bg-"],
+  form div[class*="rounded"],
+  form [class*="bg-token-composer"],
+  .bg-token-composer-surface {
+    background-color: #151320 !important;
+  }
+
+  form {
+    border-radius: 1.75rem !important;
+    overflow: hidden !important;
+  }
+
+  form textarea,
+  form [contenteditable="true"] {
+    background-color: transparent !important;
   }
 }
